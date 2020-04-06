@@ -1,0 +1,61 @@
+
+public class javacounter {
+	public static void main(String[] args) {
+
+		javacounter venue = new javacounter();
+		int rValue = venue.getValue();
+		for (int oog = 0; oog < 10; oog++) {
+			venue.click();
+		}
+
+		for (int goo = 0; goo < 5; goo++) {
+			venue.unclick();
+		}
+		System.out.println("Venue expected value 5");
+		rValue = venue.getValue();
+		System.out.println("actual value = " + rValue);
+		venue.reset();
+		for (int boo = 0; boo < 3; boo++) {
+			venue.click();
+		}
+		for (int loo = 0; loo < 4; loo++) {
+			venue.unclick();
+		}
+		System.out.println("The venue expected is -1");
+		rValue = venue.getValue();
+		System.out.println("real venue answer =" + rValue);
+	}
+
+	private int value;
+
+	/**
+	 * Gets the current value of this counter.
+	 * 
+	 * @return the current value
+	 */
+	public int getValue() {
+		return value;
+	}
+
+	/**
+	 * Advances the value of this counter by 1.
+	 */
+	public void click() {
+		value = value + 1;
+	}
+
+	/**
+	 * Decreases the value of this counter by 1.
+	 */
+
+	public void unclick() {
+		value = value - 1;
+	}
+
+	/**
+	 * Resets the value of this counter to 0.
+	 */
+	public void reset() {
+		value = 0;
+	}
+}
